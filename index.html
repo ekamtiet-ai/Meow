@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Assist Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <div id="canvas-container" aria-hidden="true"></div>
+
+  <main class="ui-container">
+    <header class="header">
+      <h1>Accessibility Communication Assist</h1>
+      <p>Interactive platform for Sign Language translation, Text-to-Speech, and Speech Recognition.</p>
+    </header>
+
+    <section class="control-panel" aria-label="Accessibility Tools">
+      
+      <article class="card">
+        <h2>Sign Language Translation</h2>
+        <label for="sign-input" class="sr-only">Type text to convert to Sign Language</label>
+        <input type="text" id="sign-input" placeholder="Type text to animate sign language...">
+        <button id="btn-translate" type="button">Translate to Sign</button>
+      </article>
+
+      <article class="card">
+        <h2>Text to Audio</h2>
+        <label for="tts-input" class="sr-only">Type text to convert to speech</label>
+        <textarea id="tts-input" rows="3" placeholder="Type message to speak out loud..."></textarea>
+        <button id="btn-speak" type="button">Speak Text</button>
+      </article>
+
+      <article class="card">
+        <h2>Speech to Text</h2>
+        <div class="status-box" id="speech-status" aria-live="polite">Click 'Start Listening' and speak.</div>
+        <button id="btn-listen" type="button">Start Listening</button>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
